@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #
 #   Open scap tool
-#
+#   by: jesusq
 #
 # 02/28/24 jqs Create script
 import os
@@ -237,7 +237,7 @@ sev_high2=report2['sev_high'],sev_medium2=report2['sev_medium'],sev_low2=report2
 # Gets command arguments
 def get_args():
     # Initialize parser
-    parser = argparse.ArgumentParser(description="Open scap operations tool.")
+    parser = argparse.ArgumentParser(description="Open scap operations tool. (HTML reports dir is '/tmp/oscap-results/html/')")
     
     # Adding arguments
     parser.add_argument("-s", "--scan", action='store_true',help = "Execute scan and print scan report(-s ScanName).")

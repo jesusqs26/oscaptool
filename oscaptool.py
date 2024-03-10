@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 '''
 
-   Open scap tool
+   = Open scap tool =
+   This tool facilitates scanning a system with open-scap 
+   scanner STIG profile and shows the results in a minimalistic
+   format.
+   
    by: jesusq
 
  02/28/24 jqs Create script
  03/05/24 jqs Make the code OOP
- 03/07/24 jqs Add logging to the script
+ 03/09/24 jqs Add logging to the script
+ 03/10/24 jqs Add required mutually exclusive group to arguments
 '''
 import os
 import sys
@@ -478,15 +483,16 @@ def get_args():
     # Initialize parser
     parser = argparse.ArgumentParser(
         description="Open scap operations tool. (HTML reports dir is '/usr/oscaptool/html/')")
-
+    # Adding required, mutually exclusive group
+    required_args = parser.add_mutually_exclusive_group(required=True)
     # Adding arguments
-    parser.add_argument("-s", "--scan", action='store_true',
+    required_args.add_argument("-s", "--scan", action='store_true',
                         help="Execute scan and print scan report.")
-    parser.add_argument("-l", "--list", action='store_true',
+    required_args.add_argument("-l", "--list", action='store_true',
                         help="List history of executed scans.")
-    parser.add_argument("-p", "--print", action='store_true',
+    required_args.add_argument("-p", "--print", action='store_true',
                         help="Print scan report list and select which report to print.")
-    parser.add_argument("-c", "--compare", action='store_true',
+    required_args.add_argument("-c", "--compare", action='store_true',
                         help="Compare two scan reports available from the history by scan names.")
     parser.add_argument("-v", "--verbose", action='store_true',
                         help="Print verbose output.")

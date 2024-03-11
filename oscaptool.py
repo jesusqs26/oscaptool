@@ -5,6 +5,7 @@
    This tool facilitates scanning a system with open-scap 
    scanner STIG profile and shows the results in a minimalistic
    format.
+   For Oracle Linux 8 only.
    
    by: jesusq
 
@@ -35,7 +36,7 @@ class OscapReport:
     information
     '''
 
-    def __init__(self, file_path: str = ""):
+    def __init__(self, file_path=None):
         '''
         Class constructor
         Args:
@@ -46,11 +47,11 @@ class OscapReport:
         self.rule_results = []
         self.date = str(datetime.datetime.now())
         self.date = self.date.replace(" ", "_")
-        self.file_path = ""
-        if file_path:
-            self.file_path = file_path
+
+        if file_path is None:
+            self.create_scan_report()
         else:
-            self.create_scan_report()  # Creates a report html file and sets it as self.file_path
+            self.file_path = file_path  # Creates a report html file and sets it as self.file_path
         self.get_scan_results()  # Populates self.summary dict and self.rule_results
 
     def create_scan_report(self):
@@ -58,7 +59,7 @@ class OscapReport:
         Scans the system with open-scap STIG profile. This generates an html report.
         '''
         logger.debug("Starting function: 'create_scan_report()' from OscapReport")
-        file_name = f"scan{self.date}"
+        file_name = str(self.date)
 
         xml_file = f"/usr/oscaptool/{file_name}.xml"
         html_file = f"/usr/oscaptool/html/{file_name}.html"
@@ -67,15 +68,18 @@ class OscapReport:
             logger.error("There is already a scan report with the same name. \
                 Try again with a different name.")
             return 1
-
+        print(("Executing open-scap security scan with stig profile..."))
         logger.info("Executing open-scap security scan with stig profile...")
-        cmd_rc = run_cmd(f"oscap xccdf eval  --profile xccdf_org.ssgproject.content_profile_stig \
+        cmd_res = run_cmd(f"oscap xccdf eval \
+                                --profile xccdf_org.ssgproject.content_profile_stig \
                                 --fetch-remote-resources \
                                 --results {xml_file} \
                                 --report {html_file} \
                                 --cpe /usr/share/xml/scap/ssg/content/ssg-ol8-cpe-dictionary.xml \
                                 /usr/share/xml/scap/ssg/content/ssg-ol8-xccdf.xml")
         # Specifically 1 because 2 means scan went well but there is lack of compliance
+        # This is the return code
+        cmd_rc = cmd_res
         if cmd_rc == 1:
             logger.error("Something went wrong while executing open-scap. Aborting...")
             return cmd_rc
@@ -86,10 +90,12 @@ class OscapReport:
         '''
         logger.debug("Starting function: 'get_scan_results()' from OscapReport")
 
-        logger.info("Opening '%i' file...",self.file_path)
-
-        with open(file=self.file_path, mode='r', encoding='utf-8') as htmlfile:
-            html = htmlfile
+        logger.info("Opening '%s' file...",self.file_path)
+        if not os.path.isfile(self.file_path):
+            logger.error("There was a problem, the specified file wasn't found.")
+            return 1
+        print("Loading information from report...")
+        html = open(file=self.file_path, mode='r', encoding='utf-8')
         soup = BeautifulSoup(html, 'html.parser')
         summary = soup.find_all('div', attrs={'class': "progress-bar"})
 
@@ -123,6 +129,7 @@ class OscapReport:
         self.rule_results = rule_results
         logger.debug("self.rule_results=")
         logger.debug(self.rule_results)
+        return 0
 
     def print_report(self):
         '''
@@ -266,7 +273,8 @@ class OscapReport:
             Open-scap scan results differences
     ===========================================================
 
-                Report 1[{self.summary['date']}]    Report 2[{report2.summary['date']}]
+        Report 1[{self.summary['date']}]    Report 2[{report2.summary['date']}]
+        
     Rule Results:
                 
     Passed          {self.summary['passed']}                       {report2.summary['passed']}
@@ -300,11 +308,11 @@ class OscapReport:
     ------------------------------------------------------------  
             """)
 
-        for e in enumerate(self.rule_results):
-            if self.rule_results[e]['Result'] == 'fail':
+        for e, rule in enumerate(self.rule_results):
+            if rule['Result'] == 'fail':
                 if report2.rule_results[e]['Result'] == 'pass':
-                    print(f"Rule: {self.rule_results[e]['Rule']}")
-                    print(f"Severity: {self.rule_results[e]['Severity']}")
+                    print(f"Rule: {rule['Rule']}")
+                    print(f"Severity: {rule['Severity']}")
                     print("*First report failed the rule but second report passed it*")
 
         print("""
@@ -312,11 +320,11 @@ class OscapReport:
     Rule differences (from failed to passed)         
     ------------------------------------------------------------  
             """)
-        for e in enumerate(self.rule_results):
-            if self.rule_results[e]['Result'] == 'pass':
+        for e, rule in enumerate(self.rule_results):
+            if rule['Result'] == 'pass':
                 if report2.rule_results[e]['Result'] == 'fail':
-                    print(f"Rule: {self.rule_results[e]['Rule']}")
-                    print(f"Severity: {self.rule_results[e]['Severity']}")
+                    print(f"Rule: {rule['Rule']}")
+                    print(f"Severity: {rule['Severity']}")
                     print("*First report passed the rule but second report failed it*")
 
 class Customlogger(logging.Logger):
@@ -343,14 +351,14 @@ class Customlogger(logging.Logger):
         Set up the stdout handler
         '''
         self.stdout_handler = logging.StreamHandler(sys.stdout)
-        self.stdout_handler.setLevel(logging.INFO)
+        self.stdout_handler.setLevel(logging.DEBUG)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         self.stdout_handler.setFormatter(formatter)
         self.addHandler(self.stdout_handler)
 
         # Set up the file handler
         self.file_handler = logging.FileHandler(self.log_path)
-        self.file_handler.setLevel(logging.INFO)
+        self.file_handler.setLevel(logging.DEBUG)
         self.file_handler.setFormatter(formatter)
         self.addHandler(self.file_handler)
 
@@ -429,7 +437,10 @@ def list_previous_reports():
     '''
     List previous scan reports
     '''
-    cmd_out = run_cmd("ls /usr/oscaptool/html/")
+    logger.debug("Checking reports dir '/usr/oscaptool/html/'")
+    cmd_res = run_cmd("ls /usr/oscaptool/html/")
+    cmd_out = str(cmd_res[1]).split()
+    
     return cmd_out
 
 
@@ -459,19 +470,23 @@ def run_cmd(cmd: str):
         -out: stdout
         -err: stderr
     '''
-    logger.debug("Starting function: 'run_cmd()'")
+    logger.debug("Starting function: 'run_cmd() with args [{%s}]'",cmd)
 
     cmd_out, cmd_err = "", ""
 
     # Create subprocess, Run command, get out and err
-    with subprocess.Popen(cmd, executable='/bin/bash',
+    # with subprocess.Popen(cmd, executable='/bin/bash',
+    #                          shell=True, stdout=subprocess.PIPE,
+    #                          stderr=subprocess.PIPE) as process:
+    cmd_p = subprocess.Popen(cmd, executable='/bin/bash',
                              shell=True, stdout=subprocess.PIPE,
-                             stderr=subprocess.PIPE) as process:
-        cmd_p = process
-    raw_out, cmd_err = cmd_p.communicate()
+                             stderr=subprocess.PIPE)
+    raw_out, raw_err = cmd_p.communicate()
     cmd_rc = cmd_p.returncode
 
+    cmd_err = raw_err.decode('utf-8')
     cmd_out = raw_out.decode('utf-8')
+    logger.debug("rc = [%i]",cmd_rc)
 
     return cmd_rc, cmd_out, cmd_err
 
@@ -496,6 +511,9 @@ def get_args():
                         help="Compare two scan reports available from the history by scan names.")
     parser.add_argument("-v", "--verbose", action='store_true',
                         help="Print verbose output.")
+    parser.add_argument("--logfile",
+                        help="Specify file for logging.")
+
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(0)
@@ -511,7 +529,7 @@ def op_scan():
     Function for the scan operation of the script
     '''
     logger.debug("Starting function: 'op_scan()'")
-    report = OscapReport()
+    report = OscapReport(None)
     report.print_report()
     return 0
 
@@ -545,8 +563,8 @@ def op_print():
     logger.debug("reports=")
     logger.debug(reports)
     if reports:
-        for i in enumerate(reports):
-            print(f"{i}:         {reports[i][:-5]}")
+        for i, report in enumerate(reports):
+            print(f"{i}:         {report[:-5]}")
     else:
         logger.warning("There is no previous scan reports at the moment. \
               To start a scan report use 'oscaptool.py -s'. Aborting...")
@@ -554,13 +572,26 @@ def op_print():
 
     print("Enter the number that contains the date of the report you want to print:")
     number = input()
-    while not isinstance(number, int):
+    while not number.isdigit():
+        print("You entered something different than a number. \
+            Please enter a number from above:")
         logger.error("You entered something different than a number. \
             Please enter a number from above:")
         number = input()
-    file_path = f"/usr/oscaptool/html/{reports[number]}"
-    result = OscapReport(file_path)
-    result.print_report()
+
+    try:
+        file_path = f"/usr/oscaptool/html/{reports[int(number)]}"
+        result = OscapReport(file_path)
+        result.print_report()
+    except IndexError:
+        logger.error("The number entered doesn't match with any \
+            previous scan report. Try the command again and enter \
+            a number from the list.")
+        print("The number entered doesn't match with any \
+            previous scan report. Try the command again and enter \
+            a number from the list.")
+        return 1
+
     return 0
 
 
@@ -574,30 +605,55 @@ def op_compare():
     logger.debug("reports=")
     logger.debug(reports)
     if reports:
-        for i in enumerate(reports):
-            print(f"{i}:         {reports[i][:-5]}")
+        for i, report in enumerate(reports):
+            print(f"{i}:         {report[:-5]}")
     else:
+        print("There is no previous scan reports at the moment. \
+              To start a scan report use 'oscaptool.py -s'. Aborting...")
         logger.error("There is no previous scan reports at the moment. \
               To start a scan report use 'oscaptool.py -s'. Aborting...")
         return 1
 
     print("Enter the number that contains the date of the first report you want to compare:")
     number = input()
-    while not isinstance(number, int):
+    while not number.isdigit():
+        print("You entered something different than a number. \
+            Please enter a number from above:")
         logger.error("You entered something different than a number. \
             Please enter a number from above:")
         number = input()
-    file_path = f"/usr/oscaptool/html/{reports[number]}"
-    result1 = OscapReport(file_path)
+    try:
+        file_path = f"/usr/oscaptool/html/{reports[int(number)]}"
+        result1 = OscapReport(file_path)
+    except IndexError:
+        logger.error("The number entered doesn't match with any \
+            previous scan report. Try the command again and enter \
+            a number from the list.")
+        print("The number entered doesn't match with any \
+            previous scan report. Try the command again and enter \
+            a number from the list.")
+        return 1
 
     print("Enter the number that contains the date of the second report you want to compare:")
     number = input()
-    while not isinstance(number, int):
+    while not number.isdigit():
+        print("You entered something different than a number. \
+            Please enter a number from above:")
         logger.error("You entered something different than a number. \
             Please enter a number from above:")
         number = input()
-    file_path = f"/usr/oscaptool/html/{reports[number]}"
-    result2 = OscapReport(file_path)
+
+    try:
+        file_path = f"/usr/oscaptool/html/{reports[int(number)]}"
+        result2 = OscapReport(file_path)
+    except IndexError:
+        logger.error("The number entered doesn't match with any \
+            previous scan report. Try the command again and enter \
+            a number from the list.")
+        print("The number entered doesn't match with any \
+            previous scan report. Try the command again and enter \
+            a number from the list.")
+        return 1
 
     result1.print_report_compare(result2)
 
@@ -608,7 +664,7 @@ def main():
     '''
     Main function
     '''
-
+    logger.info("Verifying required directories exist...")
     if not os.path.isdir("/usr/oscaptool/html/"):
         run_cmd("mkdir -p /usr/oscaptool/html/")
 
@@ -626,7 +682,11 @@ def main():
 # Variable declaration
 args = get_args()
 
-logger = Customlogger(name=__name__,verbose=args.verbose,
+if args.logfile:
+    logger = Customlogger(name=__name__,verbose=args.verbose,
+                      log_path=args.logfile)
+else:
+    logger = Customlogger(name=__name__,verbose=args.verbose,
                       log_path=LOGFILE)
 
 #### MAIN ####

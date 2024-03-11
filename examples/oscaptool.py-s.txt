@@ -1,0 +1,2488 @@
+[jesusq@OL8 html]# oscaptool.py -s
+Executing open-scap security scan with stig profile...
+Loading information from report...
+
+        ===========================================================
+                Open-scap scan results with stig profile
+        ===========================================================
+
+        Date: 2024-03-10_20:50:39.142715
+
+        Rule Results:
+
+                Passed   Failed   Other
+                125        238        10
+        Severity of failed rules ----------------------------------
+
+        High    12
+        Medium  200
+        Low     26
+        Other   10
+
+
+        Score           47.16%
+
+        ------------------------------------------------------------
+
+Rule: Install AIDE
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Build and Test AIDE Database
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure AIDE to Verify the Audit Tools
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure Notification of Post-AIDE Scan Details
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure AIDE to Verify Access Control Lists (ACLs)
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure AIDE to Verify Extended Attributes
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Audit Tools Must Be Group-owned by Root
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Audit Tools Must Be Owned by Root
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Audit Tools Must Have a Mode of 0755 or Less Permissive
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable Dracut FIPS Module
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable FIPS Mode
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set kernel parameter 'crypto.fips_enabled' to 1
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure BIND to use System Crypto Policy
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure System Cryptography Policy
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure GnuTLS library to use DoD-approved TLS Encryption
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure Kerberos to use System Crypto Policy
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure Libreswan to use System Crypto Policy
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure OpenSSL library to use System Crypto Policy
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure OpenSSL library to use TLS Encryption
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure SSH to use System Crypto Policy
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure SSH Client to Use FIPS 140-2 Validated Ciphers: openssh.config
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure SSH Server to Use FIPS 140-2 Validated Ciphers: opensshserver.config
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure SSH Client to Use FIPS 140-2 Validated MACs: openssh.config
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure SSH Server to Use FIPS 140-2 Validated MACs: opensshserver.config
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: The Installed Operating System Is Vendor Supported
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Install McAfee Endpoint Security for Linux (ENSL)
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure McAfee Endpoint Security for Linux (ENSL) is running
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Encrypt Partitions
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Ensure /home Located On Separate Partition
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure /tmp Located On Separate Partition
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure /var Located On Separate Partition
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure /var/log Located On Separate Partition
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure /var/log/audit Located On Separate Partition
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure /var/tmp Located On Separate Partition
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable the GNOME3 Login User List
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Enable the GNOME3 Screen Locking On Smartcard Removal
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Disable GDM Automatic Login
+Severity: high
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Set GNOME3 Screensaver Inactivity Timeout
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Set GNOME3 Screensaver Lock Delay After Activation Period
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Enable GNOME3 Screensaver Lock After Idle Period
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Ensure Users Cannot Change GNOME3 Screensaver Settings
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Ensure Users Cannot Change GNOME3 Session Idle Settings
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Disable Ctrl-Alt-Del Reboot Key Sequence in GNOME3
+Severity: high
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Ensure Users Re-Authenticate for Privilege Escalation - sudo !authenticate
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure Users Re-Authenticate for Privilege Escalation - sudo NOPASSWD
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Require Re-Authentication When Using the sudo Command
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: The operating system must restrict privilege elevation to authorized personnel
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure sudo only includes the default configuration directory
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure invoking users password for privilege escalation when using sudo
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Install rng-tools Package
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Uninstall abrt-libs Package
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Uninstall abrt-server-info-page Package
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Uninstall gssproxy Package
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Uninstall iprutils Package
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Uninstall krb5-workstation Package
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Uninstall libreport-plugin-logger Package
+Severity: low
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Uninstall tuned Package
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure yum Removes Previous Package Versions
+Severity: low
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure gpgcheck Enabled In Main yum Configuration
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure gpgcheck Enabled for Local Packages
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure gpgcheck Enabled for All yum Package Repositories
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure Oracle Linux GPG Key Installed
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure Software Patches Installed
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable GNOME3 Login Warning Banner
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Set the GNOME3 Login Warning Banner Text
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Modify the System Login Banner
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure the Use of the pam_faillock.so Module in the /etc/pam.d/password-auth File.
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure the Use of the pam_faillock.so Module in the /etc/pam.d/system-auth File.
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: An SELinux Context must be configured for the pam_faillock.so records directory
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Limit Password Reuse: password-auth
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Limit Password Reuse: system-auth
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Account Lockouts Must Be Logged
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Lock Accounts After Failed Password Attempts
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure the root Account for Failed Password Attempts
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Lock Accounts Must Persist
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Interval For Counting Failed Password Attempts
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Do Not Show System Messages When Unsuccessful Logon Attempts Occur
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Lockout Time for Failed Password Attempts
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Minimum Digit Characters
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Prevent the Use of Dictionary Words
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Minimum Different Characters
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Maximum Consecutive Repeating Characters from Same Character Class
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Password Maximum Consecutive Repeating Characters
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Minimum Different Categories
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Minimum Length
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Minimum Special Characters
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM password complexity module is enabled in password-auth
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM password complexity module is enabled in system-auth
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Authentication Retry Prompts Permitted Per-Session
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Password Hashing Algorithm in /etc/login.defs
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Set PAM''s Password Hashing Algorithm - password-auth
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Set PAM''s Password Hashing Algorithm
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Set Password Hashing Rounds in /etc/login.defs
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Disallow Configuration to Bypass Password Requirements for Privilege Escalation
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure PAM Displays Last Logon/Access Notification
+Severity: low
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Install the tmux Package
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Support session locking with tmux (not enforcing)
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Configure tmux to lock session after inactivity
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Configure the tmux Lock Command
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Configure the tmux lock session key binding
+Severity: low
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Prevent user from disabling the screen lock
+Severity: low
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Check that vlock is installed to allow session locking
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Install the opensc Package For Multifactor Authentication
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Install Smart Card Packages For Multifactor Authentication
+Severity: low
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Disable debug-shell SystemD Service
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Ctrl-Alt-Del Burst Action
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Ctrl-Alt-Del Reboot Activation
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure Logind to terminate idle sessions after certain time of inactivity
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Require Authentication for Emergency Systemd Target
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Require Authentication for Single User Mode
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Set Account Expiration Following Inactivity in password-auth
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Account Expiration Following Inactivity in system-auth
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Account Expiration Following Inactivity
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Assign Expiration Date to Emergency Accounts
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Assign Expiration Date to Temporary Accounts
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Set Password Maximum Age
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Password Minimum Age
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Password Minimum Length in login.defs
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Existing Passwords Maximum Age
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Existing Passwords Minimum Age
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Verify All Account Password Hashes are Shadowed with SHA512
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Prevent Login to Accounts With Empty Password
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure There Are No Accounts With Blank or Null Passwords
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Only Root Has UID 0
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure All Accounts on the System Have Unique User IDs
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Only Authorized Local User Accounts Exist on Operating System
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure the Default Bash Umask is Set Correctly
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure the Default C Shell Umask is Set Correctly
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure the Default Umask is Set Correctly in login.defs
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure the Default Umask is Set Correctly in /etc/profile
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure the Default Umask is Set Correctly For Interactive Users
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure Home Directories are Created for New Users
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure the Logon Failure Delay is Set Correctly in login.defs
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Limit the Number of Concurrent Login Sessions Allowed Per User
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: User Initialization Files Must Not Run World-Writable Programs
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure that Users Path Contains Only Local Directories
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: All Interactive Users Must Have A Home Directory Defined
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: All Interactive Users Home Directories Must Exist
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: All User Files and Directories In The Home Directory Must Be Group-Owned By The Primary Group
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: All User Files and Directories In The Home Directory Must Have Mode 0750 Or Less Permissive
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: All Interactive User Home Directories Must Be Group-Owned By The Primary Group
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Group Who Owns lastlog Command
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Owner on lastlog Command
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure All User Initialization Files Have Mode 0740 Or Less Permissive
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: All Interactive User Home Directories Must Have mode 0750 Or Less Permissive
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Permissions on lastlog Command
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - chmod
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - chown
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - fchmod
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - fchmodat
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - fchown
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - fchownat
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - fremovexattr
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - fsetxattr
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - lchown
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - lremovexattr
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - lsetxattr
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - removexattr
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify the System's Discretionary Access Controls - setxattr
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Any Attempts to Run chacl
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Any Attempts to Run setfacl
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Any Attempts to Run chcon
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Any Attempts to Run semanage
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Any Attempts to Run setfiles
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Any Attempts to Run setsebool
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects File Deletion Events by User - rename
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects File Deletion Events by User - renameat
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects File Deletion Events by User - rmdir
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects File Deletion Events by User - unlink
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects File Deletion Events by User - unlinkat
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Unsuccessful Access Attempts to Files - creat
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Unsuccessful Access Attempts to Files - ftruncate
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Unsuccessful Access Attempts to Files - open
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Unsuccessful Access Attempts to Files - open_by_handle_at
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Unsuccessful Access Attempts to Files - openat
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Unsuccessful Access Attempts to Files - truncate
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on Kernel Module Unloading - delete_module
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on Kernel Module Loading and Unloading - finit_module
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on Kernel Module Loading - init_module
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Attempts to Alter Logon and Logout Events - faillock
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Attempts to Alter Logon and Logout Events - lastlog
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - chage
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - chsh
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - crontab
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - gpasswd
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - kmod
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - mount
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - newgrp
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - pam_timestamp_check
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - passwd
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - postdrop
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - postqueue
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Any Attempts to Run ssh-agent
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - ssh-keysign
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - su
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - sudo
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - umount
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - unix_chkpwd
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - unix_update
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - userhelper
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on the Use of Privileged Commands - usermod
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Make the auditd Configuration Immutable
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects Information on Exporting to Media (successful)
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects System Administrator Actions - /etc/sudoers
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure auditd Collects System Administrator Actions - /etc/sudoers.d/
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events When Privileged Executables Are Run
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify User/Group Information - /etc/group
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify User/Group Information - /etc/gshadow
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify User/Group Information - /etc/security/opasswd
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify User/Group Information - /etc/passwd
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Record Events that Modify User/Group Information - /etc/shadow
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: System Audit Directories Must Be Group Owned By Root
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: System Audit Directories Must Be Owned By Root
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: System Audit Logs Must Have Mode 0750 or Less Permissive
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: System Audit Logs Must Be Group Owned By Root
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: System Audit Logs Must Be Owned By Root
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: System Audit Logs Must Have Mode 0640 or Less Permissive
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure a Sufficiently Large Partition for Audit Logs
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Configure auditd Disk Error Action on Disk Error
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure auditd Disk Full Action when Disk Space Is Full
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure auditd mail_acct Action on Low Disk Space
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure auditd space_left Action on Low Disk Space
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure auditd space_left on Low Disk Space
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Include Local Events in Audit Logs
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Resolve information before writing to audit logs
+Severity: low
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Set type of computer node name logging in audit logs
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Appropriate Action Must be Setup When the Internal Audit Event Queue is Full
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure immutable Audit login UIDs
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure the audit Subsystem is Installed
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable auditd Service
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable Auditing for Processes Which Start Prior to the Audit Daemon
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Extend Audit Backlog Limit for the Audit Daemon
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set the Boot Loader Admin Username to a Non-Default Value
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set Boot Loader Password in grub2
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set the UEFI Boot Loader Admin Username to a Non-Default Value
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Set the UEFI Boot Loader Password
+Severity: high
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: System Must Avoid Meltdown and Spectre Exploit Vulnerabilities in Modern Processors
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable Kernel Page-Table Isolation (KPTI)
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable vsyscalls
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure cron Is Logging To Rsyslog
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure Rsyslog Authenticates Off-Loaded Audit Records
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure Rsyslog Encrypts Off-Loaded Audit Records
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure Rsyslog Encrypts Off-Loaded Audit Records
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure remote access methods are monitored in Rsyslog
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure Logs Sent To Remote Host
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure rsyslog-gnutls is installed
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure rsyslog is Installed
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable rsyslog Service
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Install firewalld Package
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify firewalld Enabled
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure the Firewalld Ports
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Firewalld Must Employ a Deny-all, Allow-by-exception Policy for Allowing Connections to Other Systems
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Configure Firewalld to Use the Nftables Backend
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure Accepting Router Advertisements on All IPv6 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Accepting ICMP Redirects for All IPv6 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Accepting Source-Routed Packets on all IPv6 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for IPv6 Forwarding
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Accepting Router Advertisements on all IPv6 Interfaces by Default
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Accepting ICMP Redirects by Default on IPv6 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Accepting Source-Routed Packets on IPv6 Interfaces by Default
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Accepting ICMP Redirects for All IPv4 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Accepting Source-Routed Packets on all IPv4 Interfaces
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for IPv4 Forwarding on all IPv4 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable Kernel Parameter to Use Reverse Path Filtering on all IPv4 Interfaces
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Accepting ICMP Redirects by Default on IPv4 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Accepting Source-Routed Packets on IPv4 Interfaces by Default
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable Kernel Parameter to Ignore ICMP Broadcast Echo Requests on IPv4 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Sending ICMP Redirects on all IPv4 Interfaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Parameter for Sending ICMP Redirects on all IPv4 Interfaces by Default
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable ATM Support
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable CAN Support
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable IEEE 1394 (FireWire) Support
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable SCTP Support
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable TIPC Support
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Bluetooth Kernel Module
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Deactivate Wireless Network Interfaces
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure Multiple DNS Servers in /etc/resolv.conf
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure System is Not Acting as a Network Sniffer
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Group Who Owns /var/log Directory
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Group Who Owns /var/log/messages File
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify User Who Owns /var/log Directory
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify User Who Owns /var/log/messages File
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Permissions on /var/log Directory
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Permissions on /var/log/messages File
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify that Shared Library Directories Have Root Group Ownership
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify that Shared Library Directories Have Root Ownership
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify that Shared Library Directories Have Restrictive Permissions
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify that system commands files are group owned by root or a system account
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify that System Executables Have Root Ownership
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Verify that Shared Library Files Have Root Ownership
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify that System Executables Have Restrictive Permissions
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Verify that Shared Library Files Have Restrictive Permissions
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify the system-wide library files in directories
+"/lib", "/lib64", "/usr/lib/" and "/usr/lib64" are group-owned by root.
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify that All World-Writable Directories Have Sticky Bits Set
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure All World-Writable Directories Are Owned by a System Account
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure All World-Writable Directories Are Group Owned by a System Account
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Permissions on /etc/audit/auditd.conf
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Permissions on /etc/audit/rules.d/*.rules
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure All Files Are Owned by a Group
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure All Files Are Owned by a User
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable Kernel Parameter to Enforce DAC on Hardlinks
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable Kernel Parameter to Enforce DAC on Symlinks
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Disable the Automounter
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Disable Mounting of cramfs
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Modprobe Loading of USB Storage Driver
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /boot/efi
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /boot
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Add nodev Option to /dev/shm
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Add noexec Option to /dev/shm
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /dev/shm
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Add noexec Option to /home
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /home
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Add nodev Option to Non-Root Local Partitions
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Add nodev Option to Removable Media Partitions
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Add noexec Option to Removable Media Partitions
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to Removable Media Partitions
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Add nodev Option to /tmp
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add noexec Option to /tmp
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /tmp
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nodev Option to /var/log/audit
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add noexec Option to /var/log/audit
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /var/log/audit
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nodev Option to /var/log
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add noexec Option to /var/log
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /var/log
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nodev Option to /var/tmp
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add noexec Option to /var/tmp
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Add nosuid Option to /var/tmp
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Disable acquiring, saving, and processing core dumps
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable core dump backtraces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable storing core dump
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Core Dumps for All Users
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Restrict Exposed Kernel Pointer Addresses Access
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable Randomized Layout of Virtual Address Space
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable NX or XD Support in the BIOS
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable page allocator poisoning
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable SLUB/SLAB allocator poisoning
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable the uvcvideo module
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable storing core dumps
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Restrict Access to Kernel Message Buffer
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kernel Image Loading
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disallow kernel profiling by unprivileged users
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Access to Network bpf() Syscall From Unprivileged Processes
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Restrict usage of ptrace to descendant processes
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Harden the operation of the BPF just-in-time compiler
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable the use of user namespaces
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Install policycoreutils Package
+Severity: low
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Configure SELinux Policy
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure SELinux State is Enforcing
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Map System Users To The Appropriate SELinux Role
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Uninstall Automatic Bug Reporting Tool (abrt)
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable KDump Kernel Crash Analyzer (kdump)
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Install fapolicyd Package
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable the File Access Policy Service
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy to Allow the Execution of Authorized Software Programs.
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Uninstall vsftpd Package
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Remove the Kerberos Server Package
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Disable Kerberos by removing host keytab
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Configure System to Forward All Mail From Postmaster to The Root Account
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Prevent Unrestricted Mail Relaying
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: The mailx Package Is Installed
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Uninstall Sendmail Package
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Mount Remote Filesystems with nodev
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Mount Remote Filesystems with noexec
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Mount Remote Filesystems with nosuid
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Disable chrony daemon from acting as server
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable network management of chrony daemon
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Configure Time Service Maxpoll Interval
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Ensure Chrony is only configured with the server directive
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Uninstall rsh-server Package
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Remove Host-Based Authentication Files
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Remove User Host-Based Authentication Files
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Uninstall telnet-server Package
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Uninstall tftp-server Package
+Severity: high
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Ensure tftp Daemon Uses Secure Mode
+Severity: medium
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Enable the Hardware RNG Entropy Gatherer Service
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set SSH Client Alive Count Max to zero
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Set SSH Client Alive Interval
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable SSH Access via Empty Passwords
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable GSSAPI Authentication
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable Kerberos Authentication
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable SSH Root Login
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable SSH Support for User Known Hosts
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable X11 Forwarding
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Do Not Allow SSH Environment Options
+Severity: high
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable Use of Strict Mode Checking
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable SSH Warning Banner
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable SSH Print Last Log
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Force frequent session key renegotiation
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Use Only FIPS 140-2 Validated Key Exchange Algorithms
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: SSH server uses strong entropy to seed
+Severity: low
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Prevent remote hosts from connecting to the proxy display
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Install the OpenSSH Server Package
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Enable the OpenSSH Service
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Permissions on SSH Server Private *_key Key Files
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Verify Permissions on SSH Server Public *.pub Key Files
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: OpenSSH Service Must Use Passcode for Their Private Keys
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Certificate status checking in SSSD
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable Certmap in SSSD
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable Smartcards in SSSD
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: SSSD Has a Correct Trust Anchor
+Severity: medium
+Result: notchecked
+
+            ------------------------------------------------------------
+
+Rule: Configure SSSD to Expire Offline Credentials
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+Rule: Install usbguard Package
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Enable the USBGuard Service
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Log USBGuard daemon audit events using Linux Audit
+Severity: low
+Result: notapplicable
+
+            ------------------------------------------------------------
+
+Rule: Generate USBGuard Policy
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable graphical user interface
+Severity: medium
+Result: fail
+
+            ------------------------------------------------------------
+
+Rule: Disable X Windows Startup By Setting Default Target
+Severity: medium
+Result: pass
+
+            ------------------------------------------------------------
+
+[jesusq@OL8 html]#

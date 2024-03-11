@@ -1,0 +1,55 @@
+[jesusq@OL8 html]# oscaptool.py -c
+List of scan reports by date:
+0:         2024-03-10_19:38:26.693061
+1:         2024-03-10_19:51:08.053802
+Enter the number that contains the date of the first report you want to compare:
+0
+Loading information from report...
+Enter the number that contains the date of the second report you want to compare:
+1
+Loading information from report...
+
+    ===========================================================
+            Open-scap scan results differences
+    ===========================================================
+
+        Report 1[2024-03-10_20:44:48.689351]    Report 2[2024-03-10_20:44:54.033600]
+        
+    Rule Results:
+
+    Passed          125                       125
+    *Both results show same number of passed rules.*
+    Failed          238                       238
+    *Both results show same number of failed rules.*
+    Other           10                        10
+    *Both results show same number of rules in the other category.*
+
+    Severity of failed rules ----------------------------------
+
+    High            12                     12
+    *Both results show same number of rules with severity 'high'.*
+    Medium          200                   200
+    *Both results show same number of rules with severity 'medium'.*
+    Low             26                      26
+    *Both results show same number of rules with severity 'low'.*
+    Other           0                    0
+    *Both results show same number of rules with severity 'other'.*
+
+
+    Score           47.16%                       47.16%
+    *Both results show same score percentage.*
+
+    ------------------------------------------------------------
+
+
+    ------------------------------------------------------------
+    Rule differences (from passed to failed)
+    ------------------------------------------------------------
+
+Rule: Install usbguard Package
+Severity: medium
+*First report failed the rule but second report passed it*
+
+    ------------------------------------------------------------
+    Rule differences (from failed to passed)
+    ------------------------------------------------------------

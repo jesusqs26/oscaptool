@@ -522,13 +522,18 @@ def get_args():
     required_args = parser.add_mutually_exclusive_group(required=True)
     # Adding arguments
     required_args.add_argument("-s", "--scan", action='store_true',
-                        help="Execute scan and print scan report. Option '-s | --scan' no argument required.")
+                        help="Execute scan and print scan report. Option '-s \
+                            | --scan' no argument required.")
     required_args.add_argument("-l", "--list", action='store_true',
-                        help="List history of executed scans. Option '-l | --list' no argument required.")
+                        help="List history of executed scans. Option '-l | \
+                            --list' no argument required.")
     required_args.add_argument("-p", "--print", action='store_true',
-                        help="Print scan report list and select which report to print.Option '-p | --print' no argument required.")
+                        help="Print scan report list and select which report \
+                            to print.Option '-p | --print' no argument required.")
     required_args.add_argument("-c", "--compare", action='store_true',
-                        help="Compare two scan reports available from the history by scan names. Option '-c | --compare' no argument required.")
+                        help="Compare two scan reports available from the \
+                            history by scan names. Option '-c | --compare' \
+                            no argument required.")
     parser.add_argument("-v", "--verbose", action='store_true',
                         help="Print verbose output.")
     parser.add_argument("--logfile",

@@ -45,3 +45,22 @@ Specify a file for logging
 
 Log gets stored in '/usr/oscaptool/oscaptool.log'
 Html reports get stored '/usr/oscaptool/html'
+
+
+
+# Command help
+
+usage: oscaptool.py [-h] (-s | -l | -p | -c) [-v] [--logfile LOGFILE]
+
+Open scap operations tool. (HTML reports dir is '/usr/oscaptool/html/')
+
+options:
+  -h, --help         show this help message and exit
+  -s, --scan         Execute scan and print scan report. Option '-s | --scan' no argument required.
+  -l, --list         List history of executed scans. Option '-l | --list' no argument required.
+  -p, --print        Print scan report list and select which report to print.Option '-p | --print' no argument
+                     required.
+  -c, --compare      Compare two scan reports available from the history by scan names. Option '-c | --compare' no
+                     argument required.
+  -v, --verbose      Print verbose output.
+  --logfile LOGFILE  Specify file for logging.

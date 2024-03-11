@@ -13,7 +13,7 @@
  03/05/24 jqs Make the code OOP
  03/09/24 jqs Add logging to the script
  03/10/24 jqs Add required mutually exclusive group to arguments
- 03/10/24 jqs Add required mutually exclusive group to arguments
+ 03/10/24 jqs Add function to clean xml file after scan
 '''
 import os
 import sys

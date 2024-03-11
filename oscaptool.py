@@ -14,6 +14,8 @@
  03/09/24 jqs Add logging to the script
  03/10/24 jqs Add required mutually exclusive group to arguments
  03/10/24 jqs Add function to clean xml file after scan
+ 03/10/24 jqs Make functions more single pourpoused by creating
+                a new function for populating the difference msgs
 '''
 import os
 import sys
@@ -187,16 +189,14 @@ class OscapReport:
         logger.debug("Ending function: 'print_report()' from OscapReport")
         return 0
 
-    def print_report_compare(self, report2):
+    def populate_report_diff_msgs(self,report2):
         '''
-        Compares its OscapReport instance to a different 
-        report results and prints comparation results to 
-        the screen output
+        Populates msgs explaining differences between two report
+        results
         Args:
-            - report2(OscapReport object): Report to compare with 
+            -report2: Second report (compares to self)
         '''
-        logger.debug("Starting function: 'print_report_compare()' from OscapReport")
-
+        logger.debug("Starting function: 'populate_report_diff_msgs()' from OscapReport")
         logger.debug("Setting difference comparation messages based \
             on scan report results.")
         diff_msgs = {}
@@ -283,8 +283,24 @@ class OscapReport:
         else:
             diff_msgs['score'] = "Both results show same score percentage."
 
+
         logger.debug("diff_msgs=")
         logger.debug(diff_msgs)
+
+        logger.info("Ending function: 'populate_report_diff_msgs()' from OscapReport")
+        return diff_msgs
+
+    def print_report_compare(self, report2):
+        '''
+        Compares its OscapReport instance to a different 
+        report results and prints comparation results to 
+        the screen output
+        Args:
+            - report2(OscapReport object): Report to compare with 
+        '''
+        logger.debug("Starting function: 'print_report_compare()' from OscapReport")
+
+        diff_msgs = self.populate_report_diff_msgs(report2=report2)
 
         out = f"""
     ===========================================================
